@@ -100,6 +100,8 @@ These combinations form the **action/arm space**:
 $$
 A = \{ (\alpha_i, k_j) \}
 $$
+
+
 Each arm represents a unique parameter configuration.
 
 #### **Reward Function Design**: 
@@ -167,9 +169,9 @@ $$
 - Prior distribution over \( p_a \):
 
   
-  $$
-  p_a \sim \text{Beta}(\alpha_{a,0}, \beta_{a,0})
-  $$
+$$
+p_a \sim \text{Beta}(\alpha_{a,0}, \beta_{a,0})
+$$
 
   
 
@@ -179,18 +181,18 @@ $$
      For each arm \( a \), sample from the posterior Beta distribution:
 
      
-     $$
-     \theta_{a,t} \sim \text{Beta}(\alpha_{a,t-1}, \beta_{a,t-1})
-     $$
+$$
+\theta_{a,t} \sim \text{Beta}(\alpha_{a,t-1}, \beta_{a,t-1})
+$$
      
 
   2. **Action Selection**  
      Choose the arm with the highest sampled value:
 
-     
-     $$
-     A_t = \arg\max_a \theta_{a,t}
-     $$
+
+$$
+A_t = \arg\max_a \theta_{a,t}
+$$
      
 
      Then observe the binary outcome \( Y_t \).
@@ -199,13 +201,13 @@ $$
      Update the Beta parameters for the selected arm:
 
      
-     $$
-     \alpha_{A_t,t} = \alpha_{A_t,t-1} + Y_t
-     $$
+$$
+\alpha_{A_t,t} = \alpha_{A_t,t-1} + Y_t
+$$
 
-     $$
-     \beta_{A_t,t} = \beta_{A_t,t-1} + (1 - Y_t)
-     $$
+$$
+\beta_{A_t,t} = \beta_{A_t,t-1} + (1 - Y_t)
+$$
 
      
 
