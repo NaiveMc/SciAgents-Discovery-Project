@@ -62,6 +62,7 @@ Where:
 **Randomness Factor α:** Controls the degree of influence of randomness.
 
 - **Value Range:** 
+
 $$
 α∈[0, 0.2, 0.4, 0.6, 0.8]
 $$
@@ -71,6 +72,7 @@ $$
 **Number of Waypoints k:** Controls the number of "intermediate key points" (waypoints) introduced along the path from the starting point to the target.
 
 - **Value Range:** 
+
 $$
 k∈[0, 2, 4, 6, 8]
 $$
@@ -194,12 +196,15 @@ $$
 A_t = \arg\max_a \theta_{a,t}
 $$
 
- 	  Then observe the binary outcome \( Y_t \).
+​	
+
+​	Then observe the binary outcome \( Y_t \).
 
   3. **Posterior Update**  
      Update the Beta parameters for the selected arm:
 
      
+
 $$
 \alpha_{A_t,t} = \alpha_{A_t,t-1} + Y_t
 $$
