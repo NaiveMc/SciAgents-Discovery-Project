@@ -62,18 +62,18 @@ Where:
 **Randomness Factor α:** Controls the degree of influence of randomness.
 
 - **Value Range:** 
-  $$
-  α∈[0, 0.2, 0.4, 0.6, 0.8]
-  $$
+$$
+α∈[0, 0.2, 0.4, 0.6, 0.8]
+$$
 
 - When α=0, the search is completely deterministic. When α>0, path selection is affected by random perturbations, potentially leading to the exploration of paths in different areas.
 
 **Number of Waypoints k:** Controls the number of "intermediate key points" (waypoints) introduced along the path from the starting point to the target.
 
 - **Value Range:** 
-  $$
-  k∈[0, 2, 4, 6, 8]
-  $$
+$$
+k∈[0, 2, 4, 6, 8]
+$$
 
 - More waypoints can make the path more flexible and potentially lead to more innovative directions.
 
@@ -184,7 +184,7 @@ $$
 $$
 \theta_{a,t} \sim \text{Beta}(\alpha_{a,t-1}, \beta_{a,t-1})
 $$
-     
+
 
   2. **Action Selection**  
      Choose the arm with the highest sampled value:
@@ -193,9 +193,8 @@ $$
 $$
 A_t = \arg\max_a \theta_{a,t}
 $$
-     
 
-     Then observe the binary outcome \( Y_t \).
+ 	  Then observe the binary outcome \( Y_t \).
 
   3. **Posterior Update**  
      Update the Beta parameters for the selected arm:
@@ -209,7 +208,7 @@ $$
 \beta_{A_t,t} = \beta_{A_t,t-1} + (1 - Y_t)
 $$
 
-     
+​     
 
 # Results
 
