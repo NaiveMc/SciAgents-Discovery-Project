@@ -196,9 +196,7 @@ $$
 A_t = \arg\max_a \theta_{a,t}
 $$
 
-​	
-
-​		Then observe the binary outcome \( Y_t \).
+​			Then observe the binary outcome \( Y_t \).
 
   3. **Posterior Update**  
      Update the Beta parameters for the selected arm:
