@@ -159,10 +159,6 @@ $$
 
 - \( p_a \): Success probability of parameter configuration \( a \).
 
-- 
-
-- 
-
 - Prior distribution over \( p_a \):
 
   
@@ -190,6 +186,8 @@ $$
      $$
      A_t = \arg\max_a \theta_{a,t}
      $$
+     
+
      Then observe the binary outcome \( Y_t \).
 
   3. **Posterior Update**  
@@ -200,12 +198,11 @@ $$
      \alpha_{A_t,t} = \alpha_{A_t,t-1} + Y_t
      $$
 
+     $$
+     \beta_{A_t,t} = \beta_{A_t,t-1} + (1 - Y_t)
+     $$
 
-  $$
-  \beta_{A_t,t} = \beta_{A_t,t-1} + (1 - Y_t)
-  $$
-
-  
+     
 
 # Results
 
