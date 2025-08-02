@@ -147,30 +147,46 @@ Lower regret implies better learning and decision-making performance.
 #### **β — Bernoulli Thompson Sampling**
 
 We model each trial's reward as a **Bernoulli outcome**:
+
+
 $$
 (Y_t \mid A_t = a) = \mathbf{1}\{ R_t \geq \tau \} \sim \text{Bern}(p_a), \quad \tau \in [0,1]
 $$
+
+
 
 - \( Y_t \in \{0,1\} \): Indicator whether the reward meets a quality threshold \( \tau \).
 
 - \( p_a \): Success probability of parameter configuration \( a \).
 
+- 
+
+- 
+
 - Prior distribution over \( p_a \):
+
+  
   $$
   p_a \sim \text{Beta}(\alpha_{a,0}, \beta_{a,0})
   $$
+
   
 
   **Algorithm: For t = 1 to T**
 
   1. **Sampling**  
      For each arm \( a \), sample from the posterior Beta distribution:
+
+     
      $$
      \theta_{a,t} \sim \text{Beta}(\alpha_{a,t-1}, \beta_{a,t-1})
      $$
      
+
   2. **Action Selection**  
      Choose the arm with the highest sampled value:
+
+     
      $$
      A_t = \arg\max_a \theta_{a,t}
      $$
@@ -178,13 +194,18 @@ $$
 
   3. **Posterior Update**  
      Update the Beta parameters for the selected arm:
+
+     
      $$
      \alpha_{A_t,t} = \alpha_{A_t,t-1} + Y_t
      $$
-     
-     $$
-     \beta_{A_t,t} = \beta_{A_t,t-1} + (1 - Y_t)
-     $$
+
+
+  $$
+  \beta_{A_t,t} = \beta_{A_t,t-1} + (1 - Y_t)
+  $$
+
+  
 
 # Results
 
