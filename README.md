@@ -85,6 +85,7 @@ Where:
 
 #### **Parameter Space**:
 
+
 $$
 \alpha \in \{0, 0.1, ..., 1\}
 $$
@@ -94,6 +95,7 @@ k \in \{0, 1, ..., 10\}
 $$
 
 These combinations form the **action/arm space**:
+
 
 $$
 A = \{ (\alpha_i, k_j) \}
@@ -105,9 +107,12 @@ Each arm represents a unique parameter configuration.
 The effectiveness of each path is measured by two scores:
 
  Novelty score and Feasibility score
+
+
 $$
 nov_t \in [0,1]
 $$
+
 
 $$
 feas_t \in [0,1]
