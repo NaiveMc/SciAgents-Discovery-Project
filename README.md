@@ -30,13 +30,13 @@ SciAgents is built to automate the scientific-hypothesis generation process by i
 
 This module is responsible for identifying one or more meaningful routes between two scientific concepts in the knowledge graph. It uses vector-based representations of graph nodes to estimate how close they are in conceptual space and combines this with a controlled amount of random variation. The algorithm introduces random “waypoints” along the route to produce alternative paths, then constructs a smaller subgraph around the selected route for further analysis. The purpose is to capture diverse and non‑obvious connections between concepts, serving as a foundation for hypothesis generation.
 
-![image-20250801191254068](C:\Users\Naive\AppData\Roaming\Typora\typora-user-images\image-20250801191254068.png)
+![image-20250801191254068](images\image-20250801191254068.png)
 
 ## Cooperation of Agents
 
 This module organizes several specialized AI “agents,” each with a distinct role—such as planning the workflow, defining terms, generating research hypotheses, improving quantitative details, and critically reviewing the result. In one mode, agents follow a fixed sequence of steps. In another, a central manager dynamically determines which agent speaks or acts next based on the evolving context. All agents share conversational history and can access data retrieval tools and novelty‑checking functions when appropriate. The system thereby jointly produces a structured, refined, and reviewed research hypothesis. 
 
-![image-20250801193146912](C:\Users\Naive\AppData\Roaming\Typora\typora-user-images\image-20250801193146912.png)
+![image-20250801193146912](images\image-20250801193146912.png)
 
 # Current Work
 
@@ -192,7 +192,7 @@ The **left chart** illustrates the impact of the **randomness factor α** on sco
 
 The **right chart** displays how the **number of waypoints (k)** influences scoring. As k increases to 2, path novelty scores consistently rise, peaking at 8. Feasibility maintains its highest level (8) when k = 4. Continuing to increase k to 6 and 8, novelty remains high, but feasibility fluctuates and slightly decreases. This indicates that an excessive number of waypoints might introduce redundancy or even instability. Therefore, the optimal number of waypoints is recommended to be 2 or 4.
 
-![image-20250801202336056](C:\Users\Naive\AppData\Roaming\Typora\typora-user-images\image-20250801202336056.png)
+![image-20250801202336056](images\image-20250801202336056.png)
 
 ---
 
@@ -202,7 +202,7 @@ The **top chart** displays the **Novelty** (blue line) and **Feasibility** (oran
 
 The **bottom chart** shows the trajectories of two parameters over the rounds: the **randomness factor α** (blue line) and the **number of waypoints k** (red dashed line). The early stage exhibits a wide range of exploratory attempts, such as α shifting from 1.0 to 0.1, and various combinations of k from 0 to 8 being tried. This signifies that the system was in an exploration phase, aiming to quickly cover the entire parameter space. In the mid-stage, α frequently converged within the 0.6-0.8 range, while k was often set to 6 or 8. This suggests that the system began to narrow down to some high-performing parameter combinations. By the later stage, the fluctuations in both α and k visibly tightened, indicating that the system had entered an exploitation phase. This implies that, based on its prior exploration, it had largely determined the optimal solution's vicinity.
 
-![image-20250801203013346](C:\Users\Naive\AppData\Roaming\Typora\typora-user-images\image-20250801203013346.png)
+![image-20250801203013346](images\image-20250801203013346.png)
 
 # Issues & Future Work
 
